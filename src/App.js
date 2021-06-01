@@ -1,31 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
+import Alert from './alert/Alert';
+import Main from './Main';
+import {AlertProvider} from './alert/AlertContext'
 
 function App() {
-  const [colored, setColored] = useState(false);
-  const [count, setCount] = useState(1);
-  
-
-  const styles = {
-      color: colored ? 'darkred' : 'black'
-  }
 
   return (
-    <>
-      <h1 style={styles}>Количество элементов: </h1>
-      <button 
-        className={'btn btn-success'}
-        onClick={() => setCount(prev => prev + 1)}
-      >
-        Добавить
-      </button>
-
-      <button
-        className={'btn btn-warning'}
-        onClick={() => setColored(prev => !prev)}
-      >
-        Изменить
-      </button>
-    </>
+    <AlertProvider>
+      <div className={'container pt-3'}>
+        <Alert />
+        <Main toggle={() => {}}/>
+      </div>
+    </AlertProvider>
   )
 }
 
