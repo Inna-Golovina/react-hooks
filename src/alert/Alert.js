@@ -8,8 +8,8 @@ export default function Alert() {
     return null;
   }
   return (
-    <div className={'alert alert-danger'} onClick={alert.toggle}>
-      Это очень и очень важное сообщение
+    <div className={'alert alert-danger'} onClick={alert.hide}>
+      {alert.text}
     </div>
   )
 }
